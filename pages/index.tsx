@@ -35,7 +35,7 @@ export default function Home({
     problem: ""
   };
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = (values) => {
     // const client = await clientPromise;
     // const db = client.db("support");
 
