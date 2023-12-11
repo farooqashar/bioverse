@@ -1,16 +1,8 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-
-type ConnectionStatus = {
-  isConnected: boolean
-}
-
-export const getServerSideProps: GetServerSideProps<
-  ConnectionStatus
-> = async () => {
+export const getServerSideProps = async () => {
   try {
     await clientPromise
 
@@ -27,7 +19,7 @@ export const getServerSideProps: GetServerSideProps<
 
 export default function Home({
   isConnected,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}) {
 
   const initialValues = {
     name: "",
