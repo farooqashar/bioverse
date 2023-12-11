@@ -27,13 +27,20 @@ export default function Home({
     problem: ""
   };
 
-  const handleSubmit = (values) => {
-    // const client = await clientPromise;
-    // const db = client.db("support");
-
-    // db.tickets.insert({name: values.name, email: values.email, problem: values.problem, status: "New"})
-
-    console.log("values", values);
+  const handleSubmit = async (values) => {
+    let result = await fetch(
+      'http://localhost:3002/tickets', {
+          method: "post",
+          body: JSON.stringify({name: values.name,
+            email: values.email,
+            problem: values.problem, 
+            status: 'New' }),
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      })
+      result = await result.json();
+      console.warn(result);
   }
 
   return (
