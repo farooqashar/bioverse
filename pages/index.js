@@ -75,8 +75,9 @@ export default function Home({ isConnected }) {
         <h2>
           Welcome to Help Desk. Please utilize the section below to report any
           tickets that need a resolution. If you are an admin, please refer to
-          the Admin Section. Here's to great outcomes!
+          the Admin Section. Here's to great outcomes! 
         </h2>
+        <b>EDIT(Mon, December 11th): The Vercel deployment is not the latest/working properly. The project can be run locally. <a href="https://github.com/farooqashar/bioverse">README</a></b>
         <center>
           <ThemeProvider theme={defaultTheme}>
             <Container component="main" maxWidth="xs">
