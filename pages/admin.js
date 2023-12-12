@@ -15,7 +15,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import BasicSelect from "../Components/BasicSelect";
+import BasicSelect from "../components/BasicSelect.js";
 
 export default function Admin({ tickets }) {
   const Alert = React.forwardRef(function Alert(props, ref) {
