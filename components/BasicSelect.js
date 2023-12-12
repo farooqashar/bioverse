@@ -14,7 +14,8 @@ export default function BasicSelect({ ticket }) {
   };
 
   const handleStatusSubmit = async () => {
-    let result = await fetch("http://localhost:3002/tickets", {
+    const PORT = process.env.PORT || 3002;
+    let result = await fetch(`http://localhost:${PORT}/tickets`, {
       method: "post",
       body: JSON.stringify({
         _id: ticket._id,

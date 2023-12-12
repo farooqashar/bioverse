@@ -39,7 +39,8 @@ export default function Home({ isConnected }) {
   const defaultTheme = createTheme();
 
   const handleSubmit = async (values) => {
-    let result = await fetch("http://localhost:3002/tickets", {
+    const PORT = process.env.PORT || 3002;
+    let result = await fetch(`http://localhost:${PORT}/tickets`, {
       method: "post",
       body: JSON.stringify({
         name: values.name,
