@@ -60,9 +60,10 @@ export default function Home({ isConnected }) {
     <div className="container">
       <Head>
         <title>Help Desk App</title>
+        <style>{'body { background-color: #fff5ee; }'}</style>
       </Head>
 
-      <main>
+      <main bgcolor="blue">
         {isConnected
           ? console.log("connected to MongoDB")
           : console.log("not connected to MongoDB")}

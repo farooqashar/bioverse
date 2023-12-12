@@ -16,6 +16,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import BasicSelect from "../components/BasicSelect.js";
+import Head from "next/head";
 
 export default function AdminNew({ tickets }) {
   const Alert = React.forwardRef(function Alert(props, ref) {
@@ -24,6 +25,10 @@ export default function AdminNew({ tickets }) {
 
   return (
     <div>
+      <Head>
+        <title>Help Desk App</title>
+        <style>{"body { background-color: #fff5ee; }"}</style>
+      </Head>
       <Box component="span" m={1}>
         <center>
           <Box>
