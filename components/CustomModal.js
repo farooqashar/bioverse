@@ -17,7 +17,6 @@ const style = {
 };
 
 export default function CustomModal({ ticket }) {
-  console.log("ticket", ticket);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
