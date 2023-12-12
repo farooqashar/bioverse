@@ -60,7 +60,7 @@ export default function Home({ isConnected }) {
     <div className="container">
       <Head>
         <title>Help Desk App</title>
-        <style>{'body { background-color: #fff5ee; }'}</style>
+        <style>{"body { background-color: #fff5ee; }"}</style>
       </Head>
 
       <main bgcolor="blue">
@@ -104,6 +104,7 @@ export default function Home({ isConnected }) {
                     <Form>
                       <Field
                         autoComplete="Name"
+                        label="Name"
                         autoFocus
                         required
                         fullWidth
@@ -116,6 +117,7 @@ export default function Home({ isConnected }) {
                       <ErrorMessage name="name" />
                       <Field
                         autoFocus
+                        label="Email"
                         required
                         fullWidth
                         margin="normal"
@@ -127,6 +129,7 @@ export default function Home({ isConnected }) {
                       <ErrorMessage name="email" />
                       <Field
                         autoFocus
+                        label="Problem Description"
                         required
                         fullWidth
                         margin="normal"
@@ -134,17 +137,19 @@ export default function Home({ isConnected }) {
                         placeholder="Problem Description"
                         name="problem"
                         type="text"
-                        multiline
                       />
                       <ErrorMessage name="problem" />
-                      <Button
-                        onClick={() => alert("Ticket Submitted!")}
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                      >
-                        Submit
-                      </Button>
+                      <Box component="span" marginTop={40}>
+                        <Button
+                          fullWidth
+                          onClick={() => alert("Ticket Submitted!")}
+                          variant="contained"
+                          color="primary"
+                          type="submit"
+                        >
+                          Submit
+                        </Button>
+                      </Box>
                     </Form>
                   </Formik>
                 </Box>
