@@ -17,6 +17,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import BasicSelect from "../components/BasicSelect.js";
 import Head from "next/head";
+import CustomModal from "../components/CustomModal.js";
 
 export default function AdminProgress({ tickets }) {
   const Alert = React.forwardRef(function Alert(props, ref) {
@@ -67,7 +68,7 @@ export default function AdminProgress({ tickets }) {
         <Grid container spacing={1}>
           {tickets.map((ticket, index) => (
             <Grid item xs={4} key={index}>
-              <Card>
+              <Card style={{ flex: 1, backgroundColor: "#eeffee" }}>
                 <center>
                   <CardContent>
                     <Typography
@@ -88,9 +89,7 @@ export default function AdminProgress({ tickets }) {
                     </Typography>
                   </CardContent>
                   <Box>
-                    <Button onClick={() => alert(ticket.problem)} size="small">
-                      View Ticket
-                    </Button>
+                    <CustomModal ticket={ticket} />
                     <Button
                       onClick={() => alert("Email sent to the user!")}
                       size="small"
