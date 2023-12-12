@@ -17,7 +17,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import BasicSelect from "../components/BasicSelect.js";
 
-export default function Admin({ tickets }) {
+export default function AdminResolved({ tickets }) {
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
@@ -111,7 +111,10 @@ export async function getServerSideProps() {
   try {
     const client = await clientPromise;
     const db = client.db("support");
-    const tickets = await db.collection("tickets").find({}).toArray();
+    const tickets = await db
+      .collection("tickets")
+      .find({ status: "Resolved" })
+      .toArray();
 
     return {
       props: { tickets: JSON.parse(JSON.stringify(tickets)) },
